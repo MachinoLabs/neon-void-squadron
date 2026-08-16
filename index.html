@@ -518,6 +518,12 @@ const Game = {
     },
 
     initPlayers(count) {
+    // --- FOURTH RAIL CORE BOUNCER ---
+        if (FourthRail.getToken() === 'Free Tier') { 
+            triggerPaywall(); 
+            return; // This stops the game from loading!
+        }
+        // --------------------------------
         if (document.activeElement) document.activeElement.blur();
         AudioEngine.init(); AudioEngine.start();
         this.players = []; for(let i=0; i<count; i++) this.players.push({ id: i+1, color: PLAYER_COLORS[i], score: 0, lives: 3, ship: new PlayerShip(PLAYER_COLORS[i]) });
