@@ -180,16 +180,9 @@
     <!-- PROVIDED FOOTER -->
     <footer class="footer"> 
         <p class="footer-tag">Built with the StupidSimpleCrazyFast™ micro-app framework.</p> 
-        <div class="footer-credits"> Built by <a href="https://machinolabs.com" style="color: #00ffff; text-decoration: none;">MachinoLabs</a> • <a href="https://machinolabs.com" style="color: #00ffff; text-decoration: none;">machinolabs.com</a> • <a href="https://stupidsimplecrazyfast.com" style="color: #00ffff; text-decoration: none;">stupidsimplecrazyfast.com</a> <br> Joe • support@senditin.app </div> 
+        <div class="footer-credits"> Built by <a href="https://machinolabs.com" style="color: #00ffff; text-decoration: none;">MachinoLabs</a> • <a href="https://machinolabs.com" style="color: #00ffff; text-decoration: none;">machinolabs.com</a> • <a href="https://stupidsimplecrazyfast.com" style="color: #00ffff; text-decoration: none;">stupidsimplecrazyfast.com</a> <br> Joe • 717.623.2907 </div> 
     </footer>
 
-    <!-- Fourth Rail Core Bouncer -->
-    <script src="https://cdn.fourthrail.app/core.js"></script>
-    <script>
-        FourthRail.init({
-            appName: "Neon Void Squadron"
-        });
-    </script>
 <script>
 /**
  * NEON VOID SQUADRON - THE ULTIMATE BUILD
@@ -518,12 +511,6 @@ const Game = {
     },
 
     initPlayers(count) {
-    // --- FOURTH RAIL CORE BOUNCER ---
-        if (FourthRail.getToken() === 'Free Tier') { 
-            triggerPaywall(); 
-            return; // This stops the game from loading!
-        }
-        // --------------------------------
         if (document.activeElement) document.activeElement.blur();
         AudioEngine.init(); AudioEngine.start();
         this.players = []; for(let i=0; i<count; i++) this.players.push({ id: i+1, color: PLAYER_COLORS[i], score: 0, lives: 3, ship: new PlayerShip(PLAYER_COLORS[i]) });
